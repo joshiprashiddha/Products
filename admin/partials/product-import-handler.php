@@ -11,9 +11,10 @@ class Product_Import_Handler{
                 
         // remote data
         //$this->import_url='http://pf.tradetracker.net/?aid=1&encoding=utf-8&type=xml-v2&fid=381490&categoryType=2&additionalType=2';
-        //$response = wp_remote_get($this->import_url);
+        $response = file_get_contents($this->import_url);
         
         //$body = wp_remote_retrieve_body( $response );
+        
         //if (is_wp_error($body)) return;
         
         /*
@@ -28,9 +29,9 @@ class Product_Import_Handler{
         /*
          * for now i am going to parse it as online
          */
-        //$products = new SimpleXMLElement($body);
-        $data = file_get_contents('C:\wamp64\www\wordpress\wp-content\plugins\Products\admin\partials\tmp\07-11-2018_0933pm.xml');
-        $products = new SimpleXMLElement($data);
+        $products = new SimpleXMLElement($response);
+        //$data = file_get_contents('C:\wamp64\www\wordpress\wp-content\plugins\Products\admin\partials\tmp\07-11-2018_0933pm.xml');
+        //$products = new SimpleXMLElement($data);
 
         $author_id = get_current_user_id();
         
@@ -101,9 +102,12 @@ class Product_Import_Handler{
                         update_post_meta($post_id, 'product_'.$property_name.'_value', (string)$property_value);
                      }
                 }
-            echo "success";
-                exit();
-                    }
+            echo "<br/>";
+            echo "COMPLETED";
+            echo "<br/>";
+            echo "##################################################";
+            exit();
+            }
         }
     }
 }

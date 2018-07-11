@@ -54,11 +54,9 @@ class Product_Admin {
 function import_product_test() {
     if ( isset ( $_GET['url'] ) ){
         echo "***************************************************************************";
-        echo "***********************  STARTING IMPORT PROCESS  *************************";
-        echo "*********** DOWNLOADING FILE, AND SCHEDULING THE PARSER AND   **************";
-        echo "********************* SAVING TO DATABASE SHOULD BE **************************";
-        echo "*************DONE USING CRON JOB AND SHOULD RUN AT PHP CLI  ******************";
-        echo "************* FOR NOW ITS SIMPLE IMPORTED ONLINE            ******************";
+        echo "***************************************************************************";
+        echo "***************************************************************************";
+        echo "***************************************************************************";
         
         require_once plugin_dir_path( __FILE__ ) . 'partials/product-import-handler.php';
         $importhandle = new Product_Import_Handler($_GET['url']);
