@@ -97,7 +97,6 @@ class Testrest_Public {
 
     function load_product_template($template) {
         global $post;
-
         if ($post->post_type == "product" && $template !== locate_template(array("single-product.php"))) {
             /* This is a "movie" post
              * AND a 'single movie template' is not found on

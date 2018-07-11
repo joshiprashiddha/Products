@@ -93,6 +93,7 @@ function import_product_test() {
     }
     
     public function render_meta_box(){
+        
         require_once plugin_dir_path( __FILE__ ) . 'partials/single-product-meta-manager.php';
     }
 
