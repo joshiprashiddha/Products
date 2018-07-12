@@ -96,16 +96,12 @@ class Testrest_Public {
     }
 
     function load_product_template($template) {
-        global $post;
-        if ($post->post_type == "product" && $template !== locate_template(array("single-product.php"))) {
-            /* This is a "movie" post
-             * AND a 'single movie template' is not found on
-             * theme or child theme directories, so load it
-             * from our plugin directory
-             */
-            return plugin_dir_path(__FILE__) . "single-product.php";
+        global $wp_query, $post;
+        if ($post->post_type == "product") {
+            if (file_exists(plugin_dir_path(__FILE__) . '/partials/single-product.php')) {
+                return plugin_dir_path(__FILE__) . "/partials/single-product.php";
+            }
         }
-
         return $template;
     }
 

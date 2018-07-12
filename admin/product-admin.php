@@ -38,10 +38,12 @@ class Product_Admin {
             ),
             'public' => true,
             'menu_position' => 15,
-            'supports' => array('title', 'editor', 'comments', 'thumbnail'),
-            'taxonomies' => array('category'),
+            'supports' => array('title', 'editor'),
             'menu_icon' => 'dashicons-screenoptions',
             'has_archive' => true,
+            'show_in_rest' => true,
+            'rest_base' => 'products-api',
+            'rest_controller_class' => 'WP_REST_Posts_Controller',
             'rewrite' => array('slug' => 'products')
                 )
         );
