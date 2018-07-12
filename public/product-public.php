@@ -96,7 +96,7 @@ class Testrest_Public {
     public function get_custom_taxonomy_template() {
         global $url;
         if (file_exists(plugin_dir_path(__FILE__) . '/partials/product.php')) {
-            $url = get_option('home') . '/wp-json/wp/v2/products-api?filter[posts_per_page]=5';
+            $url = get_option('home') . '/wp-json/wp/v2/products-api?per_page=5&page=1';
             //$response = wp_remote_get($url);
             //if (is_wp_error($response)) {
             //    return;

@@ -40,6 +40,7 @@
         },
         callback: function (data, pagination) {
             var html = simpleTemplating(data);
+            console.log(html);
             jQuery('#data-container').html(html);
         }
     })
