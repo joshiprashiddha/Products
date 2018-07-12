@@ -33,6 +33,9 @@
         locator: 'items',
         totalNumber: 20,
         pageSize: 5,
+        alias: {
+            pageNumber: 'page'
+        },
         ajax: {
             beforeSend: function () {
                 dataContainer.html('Loading data from api...');
