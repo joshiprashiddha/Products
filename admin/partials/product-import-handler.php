@@ -102,13 +102,15 @@ class Product_Import_Handler {
                 if ($post_id && $post_id > 0) {
                     update_post_meta($post_id, 'product_property', json_encode($product_property));
                 }
-                echo "<br/>";
-                echo "COMPLETED";
-                echo "<br/>";
-                echo "##################################################";
-                exit();
             }
         }
+
+        echo "<br/>";
+        echo "COMPLETED";
+        echo "<br/>";
+        echo "##################################################";
+        wp_redirect(get_option('home'));
+        exit;
     }
 
 }
